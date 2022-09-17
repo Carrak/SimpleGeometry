@@ -12,14 +12,6 @@
             Radius = radius;
         }
 
-        public double Area()
-        {
-            return Math.PI * Math.Pow(Radius, 2);
-        }
-
-        public double Perimeter()
-        {
-            return Math.PI * Radius * 2;
-        }
+        public double Area() => Math.PI * Math.Pow(Radius, 2);
     }
 }
