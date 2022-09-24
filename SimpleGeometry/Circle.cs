@@ -7,10 +7,10 @@
         public Circle(double radius)
         {
             if (!double.IsFinite(radius))
-                throw new ArgumentException($"Параметр '{nameof(radius)}' не является числом.");
+                throw new ArgumentException($"Радиус не является числом. ({radius})");
              
             if (radius <= 0)
-                throw new ArgumentException("Радиус окружности должен быть больше 0.");
+                throw new ArgumentException($"Радиус окружности должен быть больше 0. ({radius})");
 
             Radius = radius;
         }
