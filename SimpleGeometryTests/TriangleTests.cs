@@ -1,4 +1,4 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+п»їusing Microsoft.VisualStudio.TestTools.UnitTesting;
 using SimpleGeometry;
 using System;
 
@@ -48,17 +48,17 @@ namespace SimpleGeometryTests
         }
 
         [TestMethod]
-        [DataRow(2, 3, 5, DisplayName = "Две стороны равны третьей")]
-        [DataRow(1, 2, 10000, DisplayName = "Две стороны меньше третьей")]
-        [DataRow(-12, 5, 13, DisplayName = "Первая сторона меньше нуля")]
-        [DataRow(12, -5, 13, DisplayName = "Вторая сторона меньше нуля")]
-        [DataRow(12, -5, -13, DisplayName = "Третья сторона меньше нуля")]
-        [DataRow(0, 5, 13, DisplayName = "Первая сторона равна нулю")]
-        [DataRow(12, 0, 13, DisplayName = "Вторая сторона равна нулю")]
-        [DataRow(12, -5, 0, DisplayName = "Третья сторона равна нулю")]
-        [DataRow(double.NaN, 12, 13, DisplayName = "Первая сторона не численный (NaN)")]
-        [DataRow(12, double.PositiveInfinity, 13, DisplayName = "Вторая сторона не численный (Плюс бесконечность)")]
-        [DataRow(12, 13, double.NegativeInfinity, DisplayName = "Третья сторона не численный (Минус бесконечность)")]
+        [DataRow(2, 3, 5, DisplayName = "Р”РІРµ СЃС‚РѕСЂРѕРЅС‹ СЂР°РІРЅС‹ С‚СЂРµС‚СЊРµР№")]
+        [DataRow(1, 2, 10000, DisplayName = "Р”РІРµ СЃС‚РѕСЂРѕРЅС‹ РјРµРЅСЊС€Рµ С‚СЂРµС‚СЊРµР№")]
+        [DataRow(-12, 5, 13, DisplayName = "РџРµСЂРІР°СЏ СЃС‚РѕСЂРѕРЅР° РјРµРЅСЊС€Рµ РЅСѓР»СЏ")]
+        [DataRow(12, -5, 13, DisplayName = "Р’С‚РѕСЂР°СЏ СЃС‚РѕСЂРѕРЅР° РјРµРЅСЊС€Рµ РЅСѓР»СЏ")]
+        [DataRow(12, 5, -13, DisplayName = "РўСЂРµС‚СЊСЏ СЃС‚РѕСЂРѕРЅР° РјРµРЅСЊС€Рµ РЅСѓР»СЏ")]
+        [DataRow(0, 5, 13, DisplayName = "РџРµСЂРІР°СЏ СЃС‚РѕСЂРѕРЅР° СЂР°РІРЅР° РЅСѓР»СЋ")]
+        [DataRow(12, 0, 13, DisplayName = "Р’С‚РѕСЂР°СЏ СЃС‚РѕСЂРѕРЅР° СЂР°РІРЅР° РЅСѓР»СЋ")]
+        [DataRow(12, -5, 0, DisplayName = "Р’СЂРµС‚СЊСЏ СЃС‚РѕСЂРѕРЅР° СЂР°РІРЅР° РЅСѓР»СЋ")]
+        [DataRow(double.NaN, 12, 13, DisplayName = "РџРµСЂРІР°СЏ СЃС‚РѕСЂРѕРЅР° РЅРµ СЏРІР»СЏРµС‚СЃСЏ С‡РёСЃР»РµРЅРЅС‹Рј Р·РЅР°С‡РµРЅРёРµРј (NaN)")]
+        [DataRow(12, double.PositiveInfinity, 13, DisplayName = "Р’С‚РѕСЂР°СЏ СЃС‚РѕСЂРѕРЅР° РЅРµ СЏРІР»СЏРµС‚СЃСЏ С‡РёСЃР»РµРЅРЅС‹Рј Р·РЅР°С‡РµРЅРёРµРј (РџР»СЋСЃ Р±РµСЃРєРѕРЅРµС‡РЅРѕСЃС‚СЊ)")]
+        [DataRow(12, 13, double.NegativeInfinity, DisplayName = "РўСЂРµС‚СЊСЏ СЃС‚РѕСЂРѕРЅР° РЅРµ СЏРІР»СЏРµС‚СЃСЏ С‡РёСЃР»РµРЅРЅС‹Рј Р·РЅР°С‡РµРЅРёРµРј (РњРёРЅСѓСЃ Р±РµСЃРєРѕРЅРµС‡РЅРѕСЃС‚СЊ)")]
         public void InvalidInput(double a, double b, double c)
         {
             Assert.ThrowsException<ArgumentException>(() => { var triangle = new Triangle(a, b, c); });
