@@ -19,18 +19,6 @@ namespace SimpleGeometryTests
         }
 
         [TestMethod]
-        [DataRow(1)]
-        [DataRow(3)]
-        [DataRow(4)]
-        [DataRow(10)]
-        public void CachedArea(double r)
-        {
-            var circle = new Circle(r);
-            var area = circle.Area;
-            Assert.AreEqual(area, circle.Area);
-        }
-
-        [TestMethod]
         [DataRow(double.NaN, DisplayName = "Радиус не численный (NaN)")]
         [DataRow(double.PositiveInfinity, DisplayName = "Радиус не численный (Плюс бесконечность)")]
         [DataRow(double.NegativeInfinity, DisplayName = "Радиус не численный (Минус бесконечность)")]

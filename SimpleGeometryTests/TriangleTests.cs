@@ -19,18 +19,6 @@ namespace SimpleGeometryTests
         }
 
         [TestMethod]
-        [DataRow(3, 4, 5)]
-        [DataRow(3, 10, 8)]
-        [DataRow(10, 10, 10)]
-        [DataRow(19, 11, 10)]
-        public void CachedArea(double a, double b, double c)
-        {
-            var triangle = new Triangle(a, b, c);
-            var area = triangle.Area;
-            Assert.AreEqual(area, triangle.Area);
-        }
-
-        [TestMethod]
         [DataRow(10, 10, 10, false)]
         [DataRow(3, 4, 5, true)]
         [DataRow(5, 12, 13, true)]
