@@ -15,7 +15,7 @@
             if (a <= 0 || b <= 0 || c <= 0)
                 throw new ArgumentException($"Все стороны треугольника должны быть больше 0. ({a}, {b}, {c})");
 
-            var sides = ArrangeSides(a, b, c);
+            var sides = GetSortedSides(a, b, c);
             
             if (sides[0] + sides[1] <= sides[2])
                 throw new ArgumentException($"Любые две стороны треугольника всегда должны быть больше третьей. ({a}, {b}, {c})");
@@ -24,17 +24,18 @@
             IsRight = TolerantEquals(Math.Pow(sides[0], 2) + Math.Pow(sides[1], 2), Math.Pow(sides[2], 2), PrecisionTolerance);
         }
 
-        private static double[] ArrangeSides(double a, double b, double c)
+        private static double[] GetSortedSides(double a, double b, double c)
         {
             var sides = new double[] { a, b, c };
 
-            for (int i = 1; i < sides.Length; i++)
-                if (sides[i - 1] > sides[i])
-                {
-                    var temp = sides[i];
-                    sides[i] = sides[i - 1];
-                    sides[i - 1] = temp;
-                }
+            for(int i = 0; i < sides.Length - 1; i++)
+                for (int j = 1; j < sides.Length - i; j++)
+                    if (sides[j - 1] > sides[j])
+                    {
+                        var temp = sides[j];
+                        sides[j] = sides[j - 1];
+                        sides[j - 1] = temp;
+                    }
 
             return sides;
         }

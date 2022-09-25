@@ -19,6 +19,21 @@ namespace SimpleGeometryTests
         }
 
         [TestMethod]
+        [DataRow(3, 4, 5)]
+        [DataRow(5, 4, 3)]
+        [DataRow(3, 5, 4)]
+        [DataRow(4, 5, 3)]
+        [DataRow(4, 3, 5)]
+        [DataRow(5, 3, 4)]
+        public void SidesInSortedOrder(double a, double b, double c)
+        {
+            var triangle = new Triangle(a, b, c);
+            for (int i = 1; i < triangle.Sides.Count; i++)
+                Assert.IsTrue(triangle.Sides[i - 1] <= triangle.Sides[i], 
+                    $"Стороны не упорядочены. Фактически: ({triangle.Sides[0]}, {triangle.Sides[1]}, {triangle.Sides[2]})");
+        }
+
+        [TestMethod]
         [DataRow(10, 10, 10, false)]
         [DataRow(3, 4, 5, true)]
         [DataRow(5, 12, 13, true)]
