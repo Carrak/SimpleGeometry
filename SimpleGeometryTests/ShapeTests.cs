@@ -8,8 +8,6 @@ namespace SimpleGeometryTests
     {
         private const double TestArea = 13;
 
-        // убедиться в том, что запись в приватное поле area происходит
-        // и записывается правильное значение
         [TestMethod]
         public void CachedArea()
         {

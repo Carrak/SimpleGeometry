@@ -11,7 +11,7 @@
              
             if (radius <= 0)
                 throw new ArgumentException($"Радиус окружности должен быть больше 0. ({radius})");
-
+            
             Radius = radius;
         }
 
