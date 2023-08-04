@@ -8,7 +8,7 @@ namespace SimpleGeometryTests
     public class TriangleTests
     { 
         [TestMethod]
-        [DataRow(3, 4, 5, 30, 0)]
+        [DataRow(3, 4, 5, 6, 0)]
         [DataRow(3, 10, 8, 9.92157, 0.00001)]
         [DataRow(10, 10, 10, 43.30127, 0.00001)]
         [DataRow(19, 11, 10, 42.4, 0.1)]

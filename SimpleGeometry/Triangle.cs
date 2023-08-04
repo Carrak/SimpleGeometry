@@ -49,7 +49,7 @@
         protected override double ComputeArea()
         {
             if (IsRight)
-                return Sides[0] * Sides[1] * Sides[2] / 2;
+                return Sides[0] * Sides[1] / 2;
 
             double p = (Sides[0] + Sides[1] + Sides[2]) / 2;
             return Math.Sqrt(p * (p - Sides[0]) * (p - Sides[1]) * (p - Sides[2]));
