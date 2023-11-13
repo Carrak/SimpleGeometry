@@ -6,7 +6,12 @@ namespace SimpleGeometryTests
 {
     [TestClass]
     public class TriangleTests
-    { 
+    {
+        public TriangleTests()
+        {
+            Triangle.RightTrianglePrecision = 1E-4;
+        }
+
         [TestMethod]
         [DataRow(3, 4, 5, 6, 0)]
         [DataRow(3, 10, 8, 9.92157, 0.00001)]
@@ -15,7 +20,7 @@ namespace SimpleGeometryTests
         public void Area(double a, double b, double c, double expectedArea, double delta)
         {
             var triangle = new Triangle(a, b, c);
-            Assert.AreEqual(expectedArea, triangle.Area, delta);
+            Assert.AreEqual(expectedArea, triangle.Area(), delta);
         }
 
         [TestMethod]
@@ -47,7 +52,7 @@ namespace SimpleGeometryTests
         public void IsRight(double a, double b, double c, bool expectedIsRight)
         {
             var triangle = new Triangle(a, b, c);
-            Assert.AreEqual(expectedIsRight, triangle.IsRight);
+            Assert.AreEqual(expectedIsRight, triangle.IsRightAngled);
         }
 
         [TestMethod]

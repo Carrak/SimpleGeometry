@@ -1,6 +1,6 @@
 ﻿namespace SimpleGeometry
 {
-    public class Circle : Shape
+    public class Circle : IShape
     {
         public double Radius { get; }
 
@@ -15,6 +15,6 @@
             Radius = radius;
         }
 
-        protected override double ComputeArea() => Math.PI * Math.Pow(Radius, 2);
+        public double Area() => Math.PI * Math.Pow(Radius, 2);
     }
 }

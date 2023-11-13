@@ -15,7 +15,7 @@ namespace SimpleGeometryTests
         public void Area(double r, double expectedArea, double delta)
         {
             var circle = new Circle(r);
-            Assert.AreEqual(expectedArea, circle.Area, delta);
+            Assert.AreEqual(expectedArea, circle.Area(), delta);
         }
 
         [TestMethod]
